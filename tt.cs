@@ -4,25 +4,25 @@ class Demo
     public static void Main()
     {
         Child obj = new Child();
-        obj.size();          
-        obj.FillWithOne();   
-        obj.Printing();  
-	}
+        obj.size();
+        obj.FillWithOne();   // fill first
+        obj.Printing();      // then print
+		public void FillWithOne()
+		{
+			for (int i = 0; i < NK.Length; i++)
+			{
+				for (int j = 0; j < NK[i].Length; j++)
+				{
+					NK[i][j] = 1;
+				}
+			}
+		}
+    }
 }
+
 public class Abc
 {
     public int[][] NK = new int[5][];
-
-    public void FillWithOne()
-    {
-        for (int i = 0; i < NK.Length; i++)
-        {
-            for (int j = 0; j < NK[i].Length; j++)
-            {
-                NK[i][j] = 1;
-            }
-        }
-    }
 
     public void Printing()
     {
@@ -38,6 +38,7 @@ public class Abc
         }
     }
 }
+
 public class Child : Abc
 {
     public void size()
@@ -48,4 +49,18 @@ public class Child : Abc
         NK[3] = new int[1];
         NK[4] = new int[5];
     }
+
+	public void Printing()
+    {
+        Console.WriteLine("\nPrinting Jagged Array:");
+
+        for (int i = 0; i < NK.Length; i++)
+        {
+            for (int j = 0; j < NK[i].Length; j++)
+            {
+                Console.Write(NK[i][j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }		
 }

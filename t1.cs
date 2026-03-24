@@ -5,29 +5,27 @@ class Demo
     {
         Child obj = new Child();
         obj.size();          
-        obj.FillWithOne();   
+        obj.FillSequential();   
         obj.Printing();  
-	}
+    }
 }
 public class Abc
 {
     public int[][] NK = new int[5][];
-
-    public void FillWithOne()
+    public void FillSequential()
     {
+        int num = 1;
         for (int i = 0; i < NK.Length; i++)
         {
             for (int j = 0; j < NK[i].Length; j++)
             {
-                NK[i][j] = 1;
+                NK[i][j] = num;
+                num++;
             }
         }
     }
-
     public void Printing()
     {
-        Console.WriteLine("\nPrinting Jagged Array:");
-
         for (int i = 0; i < NK.Length; i++)
         {
             for (int j = 0; j < NK[i].Length; j++)
